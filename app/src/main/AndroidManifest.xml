@@ -3,7 +3,7 @@
     package="com.troyanos.airelibre">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/aire_libre_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AireLibre">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Espacios"></activity>
+        <activity android:name=".DataBase" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".Login" />
         <activity android:name=".Loading">
             <intent-filter>

@@ -18,4 +18,9 @@
     <string name="search">Buscar</string>
     <string name="locations">Marcadores</string>
     <string name="recordar_mas_tarde">Recordar más tarde</string>
+    <string name="consigna">¿Qué quieres encontrar hoy?</string>
+    <string name="busqueda">Búsqueda</string>
+    <string name="refinar_busqueda">Refinar búsqueda</string>
+    <string name="busqueda_lugar">¿Qué lugar estás buscando?</string>
+    <string name="busqueda_municipio">¿Un Municipio en particular?</string>
 </resources>

@@ -26,6 +26,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets'
+            }
+        }
+    }
 }
 
 dependencies {
@@ -42,5 +49,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation "com.google.android.gms:play-services-location:15.0.1"
     implementation 'com.google.maps.android:maps-utils-ktx:2.4.0'
+    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
 
 }

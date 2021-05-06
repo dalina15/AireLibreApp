@@ -1,11 +1,13 @@
 package com.troyanos.airelibre;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 
@@ -36,6 +38,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     //Button encontrarme;
     private GoogleMap mMap;
 
+    DatabaseHelper databaseHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,12 +55,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (ActivityCompat.checkSelfPermission(MapsActivity.this,
                 Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             getCurrentLocation();
-        }else {
+        } else {
             ActivityCompat.requestPermissions(MapsActivity.this,
-                    new String []{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
         }
-
+        databaseHelper = new DatabaseHelper(this, "espacios.db",1);
+        try {
+            databaseHelper.CheckDatabase();
+        } catch (Exception e) {
+        }
+        try {
+databaseHelper.OpenDatabase();
+        } catch (Exception e) {
+        }
     }
+
 
     private void getCurrentLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -173,4 +186,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     //getCurrentLocation();
     //}});
     //}
+
+
 }

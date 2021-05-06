@@ -5,7 +5,21 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
-    <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+    <menu xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item
+            android:id="@+id/barra_buscadora"
+            android:icon="@drawable/ic_baseline_search_24"
+            android:title="@string/consigna"
+            app:actionViewClass="android.widget.SearchView"
+            app:showAsAction="ifRoom|withText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="18dp"
+            />
+    </menu>
+
+   <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
@@ -66,8 +80,6 @@
         app:tint="@android:color/white"
         app:backgroundTint="@color/primary" />
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+
 </RelativeLayout>
 
