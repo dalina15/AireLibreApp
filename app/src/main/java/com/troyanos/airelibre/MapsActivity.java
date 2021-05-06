@@ -35,16 +35,17 @@ import java.io.IOException;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
     SupportMapFragment mapFragment;
     FusedLocationProviderClient cliente;
-    //Button encontrarme;
+    Button encontrarme;
     private GoogleMap mMap;
 
-    DatabaseHelper databaseHelper;
+    //DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        //encontrarme = (Button) findViewById(R.id.baseline_button);
+        encontrarme = (Button) findViewById(R.id.baseline_button);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -59,7 +60,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             ActivityCompat.requestPermissions(MapsActivity.this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
         }
-        databaseHelper = new DatabaseHelper(this, "espacios.db",1);
+        /*databaseHelper = new DatabaseHelper(this, "espacios.db",1);
         try {
             databaseHelper.CheckDatabase();
         } catch (Exception e) {
@@ -67,8 +68,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         try {
 databaseHelper.OpenDatabase();
         } catch (Exception e) {
+        }*/
+
+        encontrarme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    getCurrentLocation();
+                }});
         }
-    }
 
 
     private void getCurrentLocation() {
@@ -175,17 +182,5 @@ databaseHelper.OpenDatabase();
                 }
             }
         }*/
-
     }
-
-    //**public void encontrarme(View view) {
-    //encontrarme.setOnClickListener(new View.OnClickListener() {
-    //@Override
-    //public void onClick(View view) {
-
-    //getCurrentLocation();
-    //}});
-    //}
-
-
 }

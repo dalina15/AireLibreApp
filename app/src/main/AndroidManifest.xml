@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/aire_libre_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AireLibre">
-        <activity android:name=".Espacios"></activity>
+        <activity android:name=".FormularioDeContacto"></activity>
+        <activity android:name=".GestionDeUsuario" />
+        <activity android:name=".Espacios" />
         <activity android:name=".DataBase" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Login" />

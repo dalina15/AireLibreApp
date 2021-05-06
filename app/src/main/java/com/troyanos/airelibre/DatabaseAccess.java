@@ -11,17 +11,17 @@ public class DatabaseAccess {
     private static DatabaseAccess instance;
     Cursor c = null;
 
-    private DatabaseAccess (Context context){
+   /* private DatabaseAccess (Context context){
 
         this.openHelper= new DatabaseHelper(context, null, 0);
-    }
+    }*/
 
-    public static DatabaseAccess getInstance(Context context){
+    /*public static DatabaseAccess getInstance(Context context){
         if (instance == null){
             instance = new DatabaseAccess(context);
         }
         return instance;
-    }
+    }*/
 
     public void open (){
         this.db=openHelper.getWritableDatabase();
